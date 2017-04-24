@@ -1,0 +1,22 @@
+doctype html
+html
+  head
+    link(rel='stylesheet', href='/css/bootstrap.min.css')
+    title Curso NodeJS Básico
+
+  body
+    nav.navbar.navbar-default
+      .container-fluid
+        .navbar-header
+          a.navbar-brand(href='/') Curso Node
+        ul.nav.navbar-nav
+          li
+            a(href='/') Inicio
+          li
+            a(href='/usuarios') Usuarios
+
+    .container
+      block contenido
+
+    script(src='/js/jquery-3.2.0.min.js')
+    script(src='/js/bootstrap.min.js')
