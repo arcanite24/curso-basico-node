@@ -1,0 +1,26 @@
+extends ../layout.pug
+
+block contenido
+  form(method="post", action="/user")
+    .row
+      .col-md-12
+        h4 Agregar Usuario
+      .col-md-6.form-group
+        label Nombre
+        input(type="text", name="nombre").form-control
+      .col-md-6.form-group
+        label Edad
+        input(type="number", name="edad").form-control
+      .col-md-6
+        strong Sexo 
+        label.radio-inline
+          input(type="radio", name="sexo", value="0")
+          | Masculino
+        label.radio-inline
+          input(type="radio", name="sexo", value="1")
+          | Femenino
+      .col-md-6.form-group
+        label Fecha de nacimiento
+        input(type="date", name="fechaNacimiento").form-control
+      .col-md-12
+        button(type="submit").btn.btn-primary Agregar Usuario
