@@ -1,0 +1,21 @@
+extends ../layout.pug
+
+block contenido
+  .row
+    .col-md-12
+      h4 Detalle de Usuario
+    .col-md-12
+      p
+        strong Id: #{user._id}
+    .col-md-12
+      p
+        strong Nombre: #{user.nombre}
+    .col-md-12
+      p
+        strong Edad: #{user.edad}
+    .col-md-12
+      p
+        strong Sexo: #{user.sexo == 0 ? 'Hombre' : 'Mujer'}
+    .col-md-12
+      p
+        strong Fecha de Nacimiento: #{user.fechaNacimiento}

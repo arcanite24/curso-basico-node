@@ -25,7 +25,22 @@ app.get('/', (req, res) => {
 
 app.get('/user/agregar', (req, res) => {
   return res.render('user/user_new');
-})
+});
+
+app.get('/user', (req, res) => {
+  User.find((err, users) => {
+    if(err) return res.view('error');
+    res.render('user/user_all', {users: users});
+  });
+});
+
+app.get('/user/:id', (req, res) => {
+  let id = req.params.id;
+  User.findById(id, (err, user) => {
+    if(err) return res.view('error');
+    res.render('user/user_detail', {user: user});
+  })
+}); 
 
 app.post('/user', (req, res) => {
   let nombre = req.body.nombre;
