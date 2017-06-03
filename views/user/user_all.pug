@@ -1,6 +1,7 @@
 extends ../layout.pug
 
 block contenido
+  a.btn.btn-primary(href="/user/agregar") Nuevo usuario
   table.table.table-striped
     thead
       tr
@@ -18,3 +19,4 @@ block contenido
           td= user.fechaNacimiento
           td
             a(href='/user/' + user._id).btn.btn-primary Detalles
+            a(href='/user/edit/' + user._id).btn.btn-default Editar

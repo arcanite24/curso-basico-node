@@ -40,7 +40,15 @@ app.get('/user/:id', (req, res) => {
     if(err) return res.view('error');
     res.render('user/user_detail', {user: user});
   })
-}); 
+});
+
+app.get('/user/edit/:id', (req, res) => {
+  let id = req.params.id;
+  User.findById(id, (err, user) => {
+    if(err) return res.view('error');
+    res.render('user/user_edit', {user: user});
+  });
+})
 
 app.post('/user', (req, res) => {
   let nombre = req.body.nombre;
